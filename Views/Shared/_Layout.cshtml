@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Westfield LMS</title>
+    <link href="https://fonts.googleapis.com/css?family=Coda" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-blue.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="custom-header mdl-layout__header mdl-layout__header--waterfall">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title logo"><a href="/">Westfield Library Management System</a></span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" asp-controller="Home" asp-action="Index">Home</a>
+                    <a class="mdl-navigation__link" asp-controller="Catalog" asp-action="Index">Catalog</a>
+                    <a class="mdl-navigation__link" asp-controller="Patron" asp-action="Index">Patrons</a>
+                    <a class="mdl-navigation__link" asp-controller="Branch" asp-action="Index">Branches</a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">LightLib</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" asp-controller="Home" asp-action="Index">Home</a>
+                <a class="mdl-navigation__link" asp-controller="Catalog" asp-action="Index">Catalog</a>
+                <a class="mdl-navigation__link" asp-controller="Patron" asp-action="Index">Patrons</a>
+                <a class="mdl-navigation__link" asp-controller="Branch" asp-action="Index">Branches</a>
+            </nav>
+        </div>
+        <div class="page-content">
+            @RenderBody()
+        </div>
+    </div>
+
+
+    @RenderSection("Scripts", required: false)
+    @RenderSection("Styles", required: false)
+</body>
+</html>
